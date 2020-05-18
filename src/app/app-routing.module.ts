@@ -1,13 +1,19 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
-const defaultRedirect = '/home/start';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: defaultRedirect, pathMatch: 'full' },
-  { path: 'admin', loadChildren: './modules/admin/admin.module#AdminModule' } ,
-  { path: 'home', loadChildren: './modules/home/home.module#HomeModule' } ,
-  { path: '', redirectTo: defaultRedirect, pathMatch: 'full' },
+  
+  {  path: 'auth', loadChildren: './modules/auth/auth.module#AuthModule' } ,
+  {  path: 'admin',
+     loadChildren: './modules/admin/admin.module#AdminModule',
+     canActivate: [AuthGuard]
+   },
+   {  path: 'register',
+     loadChildren: './modules/register/register.module#RegisterModule',
+     canActivate: [AuthGuard]
+   },
+  { path: '', redirectTo: 'auth', pathMatch: 'full' }
 ];
 
 @NgModule({

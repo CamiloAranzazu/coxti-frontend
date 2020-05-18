@@ -1,0 +1,31 @@
+<main class="box box-horizontal box-light mat-elevation-z4">
+    <div class="auth-info mat-elevation-z1">
+        <div class="logo image-responsive">
+            <img src="assets/images/logoCoxti.png" alt="Vytra">
+        </div>
+        <div class="auth-info-title">
+
+        </div>
+        <div class="copyright">
+        </div>
+    </div>
+    <div class="auth-content">
+        <form class="example-form" [formGroup]="myForm">
+            <div class="control">
+                <label class="card-title" for="correo">Correo
+              <span class="color-error"
+                *ngIf="myForm.controls['correo'].invalid && myForm.controls['correo'].touched">Requerido</span>
+            </label>
+                <input formControlName="correo" class="form-control" placeholder="Correo *" type="email" id="correo">
+            </div>
+            <div class="control">
+                <label class="card-title" for="password">Contraseña
+              <span class="color-error"
+                *ngIf="myForm.controls['password'].invalid && myForm.controls['password'].touched">Requerido</span>
+            </label>
+                <input formControlName="password" class="form-control" placeholder="Contraseña *" type="password" id="password">
+            </div>
+            <button mat-button class="btnIniciar" (click)="Iniciar()">Iniciar</button>
+        </form>
+    </div>
+</main>

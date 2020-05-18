@@ -1,0 +1,11 @@
+<div class="card" [ngClass]="
+  (color === 'First'? 'first': '') ||
+  (color === 'Second'? 'second': '') ||
+  (color === 'Third'? 'third': '') ">
+    <div class="label">
+        <label for="">{{label}}</label>
+    </div>
+    <div class="precio">
+        <label for="">{{precio}}</label>
+    </div>
+</div>

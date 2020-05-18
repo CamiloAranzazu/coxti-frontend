@@ -1,3 +1,43 @@
-<div class="animated fadeIn fast">
-    <router-outlet></router-outlet>
+<div class="fab-container" matTooltip="Agregar Usuario" matTooltipPosition="above" [routerLink]="[ '/register']">
+    <div class="fab-icon-holder">
+        <mat-icon>add</mat-icon>
+    </div>
 </div>
+<app-header></app-header>
+<h4>Usuarios</h4>
+<mat-accordion *ngFor="let user of users">
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Nombre: {{ user.datosPersonales.nombreCompleto || 'sin Nombre'}}
+            </mat-panel-title>
+            <mat-panel-description>
+                Documento: {{ user.datosPersonales.numeroIdentidad || 'Sin docuemnto'}}
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <!-- Datos -->
+        <mat-list>
+            <div mat-subheader>Datos Personales</div>
+            <mat-list-item>
+                <div mat-line><span class="subtitle">Nombre: </span>{{ user.datosPersonales.celular || 'N/A'}}</div>
+                <div mat-line><span class="subtitle">Correo: </span>{{ user.datosPersonales.correo || 'N/A'}}</div>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <div mat-subheader>Datos de residencia</div>
+            <mat-list-item>
+                <div mat-line><span class="subtitle">Departamento: </span>{{ user.datosResidencia.departamento || 'N/A'}}</div>
+                <div mat-line><span class="subtitle">Ciudad: </span>{{ user.datosResidencia.ciudad || 'N/A'}}</div>
+                <div mat-line><span class="subtitle">Barrio: </span>{{ user.datosResidencia.barrio || 'N/A'}}</div>
+                <div mat-line><span class="subtitle">Residencia: </span>{{ user.datosResidencia.direccionResidencia || 'N/A'}}</div>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <div mat-subheader>Datos Financieros</div>
+            <mat-list-item>
+                <div mat-line><span class="subtitle">Salario: </span>{{ user.datosFinancieros.salario || 'N/A'}}</div>
+                <div mat-line><span class="subtitle">Otros ingresos: </span>{{ user.datosFinancieros.otrosIngresos || 'N/A'}}</div>
+                <div mat-line><span class="subtitle">Gas. Nebsuales: </span>{{ user.datosFinancieros.gastosMensuales || 'N/A'}}</div>
+                <div mat-line><span class="subtitle">Gas. Finacieros: </span>{{ user.datosFinancieros.gastosFinacieros || 'N/A'}}</div>
+            </mat-list-item>
+        </mat-list>
+    </mat-expansion-panel>
+</mat-accordion>

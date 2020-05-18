@@ -1,0 +1,124 @@
+<div class="fab-container" matTooltip="Agregar Usuario" matTooltipPosition="above" [routerLink]="[ '/admin']">
+    <div class="fab-icon-holder">
+        <mat-icon>replay</mat-icon>
+    </div>
+</div>
+<app-header></app-header>
+<div class="card">
+    <h3 class="card-title">Usuario</h3>
+    <h5 class="card-title">Construye el perfil. Esta información nos permitirá saber más sobre el usuario.</h5>
+
+    <form [formGroup]="myForm">
+        <mat-divider></mat-divider>
+        <div class="data">
+            <h5 class="card-title subtile">Datos Personales.</h5>
+            <hr>
+            <div formGroupName="datosPersonales" class="subData">
+                <div class="control">
+                    <label class="card-title" for="nombreCompleto">
+                    Nombre completo
+                    </label>
+                    <input formControlName="nombreCompleto" class="form-control" placeholder="nombre completo *" type="text" id="nombreCompleto">
+                </div>
+                <div class="control">
+                    <label class="card-title" for="numeroIdentidad">
+                    Número de identidad
+                    </label>
+                    <input formControlName="numeroIdentidad" class="form-control" placeholder="numero Identidad *" type="text" id="numeroIdentidad">
+                </div>
+                <div class="control">
+                    <label class="card-title" for="celular">
+                    Celular
+                    </label>
+                    <input formControlName="celular" class="form-control" placeholder="celular *" type="number" id="celular">
+                </div>
+                <div class="control">
+                    <label class="card-title" for="correo">
+                      Correo
+                    </label>
+                    <input formControlName="correo" class="form-control" placeholder="Nombre *" type="text" id="correo">
+                </div>
+                <div class="control">
+                    <label class="card-title" for="id">
+                     Validar correo
+                     </label>
+                    <input formControlName="validateCorreo" class="form-control" placeholder="validar correo *" type="text" id="validateCorreo">
+                </div>
+                <div class="control">
+                    <label class="card-title" for="password">
+                    Contraseña
+                    </label>
+                    <input formControlName="password" class="form-control" placeholder="contraseña *" type="text" id="password">
+                </div>
+                <div class="control">
+                    <label class="card-title" for="validatePassword">
+                    validar contraseña
+                    </label>
+                    <input formControlName="validatePassword" class="form-control" placeholder="Validar contraseña *" type="text" id="validatePassword">
+                </div>
+            </div>
+            <h5 class="card-title subtile">Datos de residencia.</h5>
+            <div formGroupName="datosResidencia" class="subData">
+
+                <div class="control">
+                    <label class="card-title" for="departamento">
+                  Departamento
+                  </label>
+                    <input formControlName="departamento" class="form-control" placeholder="Departamento *" type="text" id="departamento">
+                </div>
+                <div class="control">
+                    <label class="card-title" for="ciudad">
+                      Ciudad
+                  </label>
+                    <input formControlName="ciudad" class="form-control" placeholder="Ciudad *" type="text" id="ciudad">
+                </div>
+                <div class="control">
+                    <label class="card-title" for="barrio">
+                      Barrio
+                  </label>
+                    <input formControlName="barrio" class="form-control" placeholder="Barrio *" type="text" id="barrio">
+                </div>
+                <div class="control">
+                    <label class="card-title" for="direccionResidencia">
+                      Dirección
+                  </label>
+                    <input formControlName="direccionResidencia" class="form-control" placeholder="Dirección *" type="text" id="direccionResidencia">
+                </div>
+            </div>
+            <h5 class="card-title subtile">Datos de financieros.</h5>
+            <div formGroupName="datosFinancieros" class="subData">
+
+                <div class="control">
+                    <label class="card-title" for="salario">
+                    Salario
+                </label>
+                    <input formControlName="salario" class="form-control" placeholder="salario *" type="number" id="salario">
+                </div>
+                <div class="control">
+                    <label class="card-title" for="otrosIngresos">
+                      Otros Ingresos
+                </label>
+                    <input formControlName="otrosIngresos" class="form-control" placeholder="Otros Ingresos *" type="number" id="otrosIngresos">
+                </div>
+                <div class="control">
+                    <label class="card-title" for="gastosMensuales">
+                      gastos Mensuales
+                </label>
+                    <input formControlName="gastosMensuales" class="form-control" placeholder="gastos Mensuales *" type="number" id="gastosMensuales">
+                </div>
+                <div class="control">
+                    <label class="card-title" for="gastosFinacieros">
+                      gastos Finacieros
+                </label>
+                    <input formControlName="gastosFinacieros" class="form-control" placeholder="gastos Finacieros *" type="number" id="gastosFinacieros">
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="nav">
+        <div (click)="Save()" class="moving-tab" style="width: 298.885px; transform: translate3d(-8px, 0px, 0px); transition: all 0.5s cubic-bezier(0.29, 1.42, 0.79, 1) 0s;">
+            Crear Usuario
+        </div>
+    </div>
+</div>

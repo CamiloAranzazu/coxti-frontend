@@ -27,7 +27,8 @@ import {
   MatStepperModule,
   MatBottomSheetModule,
   MatBadgeModule,
-  MatExpansionModule
+  MatExpansionModule,
+  MatListModule
 } from '@angular/material';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { RouterModule } from '@angular/router';
@@ -70,6 +71,7 @@ const MAT_IMPORTS = [
   MatBottomSheetModule,
   MatTabsModule,
   MatBadgeModule,
+  MatListModule
 ];
 
 @NgModule({

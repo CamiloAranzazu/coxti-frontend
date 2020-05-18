@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../http/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -7,12 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private authService: AuthService
+  ) { }
 
   ngOnInit() {
   }
 
-  Pageme() {
-    window.open('https://mypage-ea25e.firebaseapp.com/', "_blank");
+  logout() {
+    this.authService.logout();
   }
+
+
+
 }

@@ -1,0 +1,43 @@
+@import 'functions';
+@import 'mixins';
+@import '~@angular/material/theming';
+:host {
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        background: get-color('sub-title');
+        padding: 5px;
+        padding-right: 5px;
+        padding-left: 5px;
+        .textAndImg {
+            @include flex(row, center, center, nowrap);
+            color: #FFFFFF;
+            font-family: "Segoe UI";
+            font-size: 17px;
+            font-weight: bold;
+        }
+        .text {
+            @include flex(column, flex-end, flex-end, nowrap);
+            margin-right: 5px;
+        }
+        .imgPerfil {
+            cursor: pointer;
+            color: white;
+            background-image: linear-gradient(284deg, #1cc7d0, #2dde98);
+            color: white;
+            border-radius: 50px;
+            border: 2px white solid;
+            height: 60px;
+            line-height: 28px;
+            display: inline-block;
+            transition: 0.4s;
+            &:hover {
+                background-color: #00aeff;
+                background-image: linear-gradient(80deg, #00aeff, #3369e7);
+                box-shadow: 0 4px 12px rgba(51, 105, 231, 0.55)
+            }
+        }
+    }
+}

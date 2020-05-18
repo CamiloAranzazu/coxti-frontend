@@ -14,6 +14,8 @@ export interface JsendResponse {
   status: 'success' | 'fail' | 'error' | 'OK';
   data?: any;
   message?: string;
+  token?: string;
+  array?: [];
   pagination?: ResponsePagination; // ! Check functionality for vytraAPI
 }
 export type HttpJsendResponse = HttpResponse<JsendResponse> | HttpErrorResponse;

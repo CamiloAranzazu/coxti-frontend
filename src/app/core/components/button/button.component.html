@@ -1,0 +1,5 @@
+<div id="button">
+    <button type="button" class="btnEvent" (click)="onClickButton($event)" [ngClass]="color === 'next'? 'next': 'skip'">
+    {{label || 'TEXTO'}}
+  </button>
+</div>

@@ -1,38 +1,41 @@
+@import 'functions';
+@import 'mixins';
+@import '~@angular/material/theming';
 :host {
-    @keyframes newshore_ {
-        from { transform: none; }
-        80% { transform: scale(0); }
-        to { transform: none; }
-    }
-    .newshore {
-       position: fixed;
-       cursor: pointer;
-       z-index: 999;
-       animation: newshore_ 1.4s infinite;
-    }
     header {
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-between;
         flex-wrap: wrap;
-        .icon {
-            top: 12px;
-            font-size: 33px;
-            font-weight: 900;
-            letter-spacing: -1px;
-            line-height: 33px;
-            text-decoration: none;
-            color: #38384A;
-            font-family: "Roboto", sans-serif;
+        background: #8e9eab;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #eef2f3, #8e9eab);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        padding: 5px;
+        padding-right: 5px;
+        padding-left: 5px;
+        border-bottom: 1.2px white solid;
+        .textAndImg {
+            @include flex(row, center, center, nowrap);
+            color: #FFFFFF;
+            font-family: "Segoe UI";
+            font-size: 17px;
+            font-weight: bold;
         }
-        .btn {
+        .text {
+            @include flex(column, flex-end, flex-end, nowrap);
+            margin-right: 5px;
+        }
+        .imgPerfil {
             cursor: pointer;
             color: white;
             background-image: linear-gradient(284deg, #1cc7d0, #2dde98);
             color: white;
-            border-radius: 20px;
-            padding: 2px 30px !important;
-            height: 30px;
+            border-radius: 50px;
+            border: 2px white solid;
+            height: 60px;
             line-height: 28px;
             display: inline-block;
             transition: 0.4s;
@@ -41,6 +44,6 @@
                 background-image: linear-gradient(80deg, #00aeff, #3369e7);
                 box-shadow: 0 4px 12px rgba(51, 105, 231, 0.55)
             }
-        } 
+        }
     }
 }
